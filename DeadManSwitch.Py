@@ -14,11 +14,11 @@ def decrypt(i):
 
         try:
             pyAesCrypt.decryptFile("wall.aes", "index.html", password, (64 * 1024))
-            print("[CONGRATULATIONS] Password accepted")
+            print("\033[92m[CONGRATULATIONS] Password accepted\033[0m")
             os.remove("wall.aes")
             exit()
         except:
-            print("Wrong password, please try again")
+            print("\033[91mWrong password, please try again\033[0m")
             decrypt(i)
     
     print("Deleting files...")
